@@ -1,0 +1,20 @@
+# Ignore the .idea folder
+.idea/
+
+# Ignore the Java_Practice.iml file
+Java_Practice.iml
+
+# Ignore .class files
+*.class
+
+# Ignore everything
+*
+
+# Except for directories (needed to keep structure)
+!*/
+
+# Except for Java files
+!*.java
+
+# Except for README.md
+!README.md

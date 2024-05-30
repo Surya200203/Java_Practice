@@ -10,6 +10,7 @@ class Mobile2{
     // Ststic block is called once
     static{
         name = "mobile";
+        System.out.println("In static block");
     }
 
     public Mobile2(){
@@ -24,14 +25,18 @@ class Mobile2{
 }
 
 public class StaticBlock{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         
-        Mobile2 m = new Mobile2();
 
-        m.brand = "Apple";
-        m.price = 120000;
+        Class.forName("Mobile2");
+        // Mobile2 m = new Mobile2();
+
+        // m.brand = "Apple";
+        // m.price = 120000;
         
-        m.show();
+        // m.show();
+
+        
     }
 
 }

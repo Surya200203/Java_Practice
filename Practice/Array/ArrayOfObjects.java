@@ -32,12 +32,23 @@ class ArrayOfObjects{
 
         Student arr[] = {obj,obj1,obj2};
         System.out.println("########## Student Details ##########");
-        for(int i=0 ; i < arr.length ; i++){
-            System.out.println("Student "+ (i+1));
-            System.out.println("Roll No : - "+arr[i].rollNo);
-            System.out.println("Name :- "+arr[i].name);
-            System.out.println("Standard :- "+arr[i].Standard);
-            System.out.println("Section :- "+arr[i].section);
-        }
+
+//        for(int i=0 ; i < arr.length ; i++){
+//            System.out.println("Student "+ (i+1));
+//            System.out.println("Roll No : - "+arr[i].rollNo);
+//            System.out.println("Name :- "+arr[i].name);
+//            System.out.println("Standard :- "+arr[i].Standard);
+//            System.out.println("Section :- "+arr[i].section);
+//        }
+
+          for(Student n : arr){
+              System.out.println("Roll No :- "+ n.rollNo);
+              System.out.println("Name :- "+ n.name);
+              System.out.println("Standard :- "+ n.Standard);
+              System.out.println("Section :- "+ n.section);
+              System.out.println();
+          }
+
+
     }
 }

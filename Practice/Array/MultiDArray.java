@@ -42,7 +42,6 @@ public class MultiDArray {
             }
             System.out.println();
         }
-<<<<<<< HEAD
 
         // Jagged Array
         System.out.println();
@@ -81,8 +80,7 @@ public class MultiDArray {
                 }
             }
         }
-=======
->>>>>>> e30030934f350f5e7c648027d432b630513f235c
+
     }
     
 }

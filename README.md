@@ -552,4 +552,8 @@ class ArrayOfObjects{
 
   ```
   
-## 
+## Static Block
+```java'
+    
+
+```

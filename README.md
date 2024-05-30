@@ -417,6 +417,8 @@ class ArrayOfObjects{
 - Stream of characters
 - String is a class
 - use .charAt() to get character at given index.
+- Strings are Immutable
+
 ```java
 
     String str = "Sahil";
@@ -425,3 +427,37 @@ class ArrayOfObjects{
     
     System.out.println(str.charAt(1)); // a
 ```
+- If need to use mutable strings we have two classes in Java
+    1. String Builder
+    2. String Buffer
+- Stringbuffer gives a buffer size of 16 bytes
+  ```java
+    
+    StringBuffer sb = new StringBuffer();  // Creating a string buffer
+    System.out.println(sb.capacity());  // 16
+
+    StringBuffer sb2 = new StringBuffer("Sanket");
+    System.out.println(sb2.capacity());  // 22
+            
+    sb2.append(" Suryavanshi");
+    System.out.println(sb2);    // "Sanket Suryavanshi"
+    System.out.println(sb2.length());   // 18
+    System.out.println(sb2.capacity()); // 22
+
+    sb2.append(" is learning Java");
+    System.out.println(sb2);    // "Sanket Suryavanshi is learning Java"
+    System.out.println(sb2.length());   // 35
+    System.out.println(sb2.capacity()); // 46
+    
+  ```
+- Use .toString() method to convert StringBuffer to String
+  ```java
+    // To convert Stringbuffer to String
+    String str =  sb2.toString();
+    System.out.println(str);
+    System.out.println(str.length()); //35
+  ```
+  
+## Static Variable in  Java
+
+- 

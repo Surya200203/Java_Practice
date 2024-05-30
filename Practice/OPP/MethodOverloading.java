@@ -16,7 +16,7 @@ class Calculator1 {
         }
     }
 
-    public class MethodOverloading {
+public class MethodOverloading {
 
         public static void main(String[] args) {
 
@@ -34,5 +34,4 @@ class Calculator1 {
         }
 
     }
-}
 

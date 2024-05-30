@@ -458,6 +458,98 @@ class ArrayOfObjects{
     System.out.println(str.length()); //35
   ```
   
-## Static Variable in  Java
+## Static Keyword in  Java
 
-- 
+### Static Variable
+- Static variable are shared among all objects as given in below example
+  ```java
+     
+    class Mobile{
+        String brand;
+        int price;
+        static String name;
+
+        public void show(){
+            System.out.println(brand + " -"+ price +" -"+name);
+        }
+    }
+
+    public class StaticVarilable {
+
+        public static void main(String[] args) {
+
+            Mobile m = new Mobile();
+
+            m.brand = "Apple";
+            m.price = 120000;
+            m.name = "Smart Phone";
+
+            Mobile m2 = new Mobile();
+
+            m2.brand = "Samsung";
+            m2.price = 80000;
+            m2.name = "Samrt Phone";
+
+            m.name = "mobile";
+
+            m.show();
+            m2.show();
+        
+            /*
+                OUTPUT
+                Apple -120000 -mobile
+                Samsung -80000 -mobile
+            */
+
+        }
+    }
+
+  ```
+### Static Methods
+
+- We can use static variables in static methods, but can't use non-variables in static method.
+- Because static variables are assigned to all objects, and it gets confused which non-static variable to use when we use it in static method.
+- So to access non-static variables we pass an object as parameter to static method.
+  ```java
+      class Mobile1{
+          String brand;
+          int price;
+          static String name;
+
+          public void show(){
+              System.out.println(brand + " -"+ price +" -"+name);
+          }
+
+          public static void show1(Mobile1 obj){
+              System.out.println(obj.brand + " -"+ obj.price +" -"+name);
+          }
+      }
+
+      public class StaticMethod {
+
+          public static void main(String[] args) {
+              Mobile1 m = new Mobile1();
+              m.brand = "Apple";
+              m.price = 120000;
+              Mobile1.name = "mobile";
+              m.show();
+
+              Mobile1 m2 = new Mobile1();
+              m2.brand = "Samsung";
+              m2.price = 80000;
+              Mobile1.show1(m2);
+
+              /*
+                 OUTPUT
+
+                 Apple -120000 -mobile
+                 Samsung -80000 -mobile
+
+              */
+
+          }
+      }
+
+  ```
+  
+## 

@@ -759,7 +759,7 @@ public class Main(){
     }
     
     // Parameterized Constructor
-    public Human(String name,int age,String gender){
+    public Human(Stirng name,int age,String gender){
       this.name = name;
       this.age = age;
       this.gender = gender;

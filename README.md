@@ -836,6 +836,129 @@ public class Main(){
         in A show()
         */
   ```
+  
+## Inheritance
+- To inherit properties of one class by another.
 
+### Single Level Inheritance
+- Calc.java file
+  ```java
+    class Calc {
 
+        public int add(int n1, int n2){
+            return n1 + n2;
+        }
+
+        public int sub(int n1 , int n2){
+            return n1 - n2;
+        }
+    }
+  ```
+- AdvCalc.java file
+  ```java
+    class AdvCalc extends Calc{
+        public int multi(int n1, int n2){
+            return n1 * n2;
+        }
+
+        public int div(int n1, int n2){
+            return n1/n2;
+        }
+    }
+  ```
+- Demo.java file
+  ```java
+  
+    class Demo{
+        public static void main(String[] args){
+            
+            AdvCalc obj = new AdvCalc();
+            int r1 = obj.add(2,2);
+            int r2 = obj.sub(3,2);
+            int r3 = obj.multi(3,3);
+            int r4 = obj.div(3 / 2);
+            System.out.println("2 + 2 : "+r1);
+            System.out.println("3 - 2 : "+r2);
+            System.out.println("3 * 3 : "+r3);
+            System.out.println("3 / 2 : "+r4);
+        } 
+    }
+  ```
+- OUTPUT
+  ```java
+     /* 
+    
+      2 + 2 : 4
+      3 - 2 : 1
+      3 * 3 : 9
+      3 / 2 : 1
+    
+     */
+  ```
+### Multi Level Inheritance
+- Calc.java file
+  ```java
+    class Calc {
+
+        public int add(int n1, int n2){
+            return n1 + n2;
+        }
+
+        public int sub(int n1 , int n2){
+            return n1 - n2;
+        }
+    }
+  ```
+- AdvCalc.java file
+  ```java
+    class AdvCalc extends Calc{
+        public int multi(int n1, int n2){
+            return n1 * n2;
+        }
+
+        public int div(int n1, int n2){
+            return n1/n2;
+        }
+    }
+  ```
+- VeryAdvCalc.java file
+  ```java
+    class VeryAdvCalc extends AdvCalc{
+        public int power(int n1, int n2){
+            return (int) Math.pow((double) n1,(double) n2);
+        }
+    }
+  ```
+- Demo.java file
+  ```java
+  
+    class Demo{
+        public static void main(String[] args){
+            
+            VeryAdvCalc obj = new VeryAdvCalc();
+            int r1 = obj.add(2,2);
+            int r2 = obj.sub(3,2);
+            int r3 = obj.multi(3,3);
+            int r4 = obj.div(3 / 2);
+            int r5 = obj.power(2,2);
+            System.out.println("2 + 2 : "+r1);
+            System.out.println("3 - 2 : "+r2);
+            System.out.println("3 * 3 : "+r3);
+            System.out.println("3 / 2 : "+r4);
+            System.out.println("2 ** 2 : "+r5);
+        } 
+    }
+  ```
+- OUTPUT
+  ```java
+     /* 
+    
+      2 + 2 : 4
+      3 - 2 : 1
+      3 * 3 : 9
+      3 / 2 : 1
+      2 ** 2 : 4
+    
+     */
+  ```
 

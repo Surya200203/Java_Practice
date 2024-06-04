@@ -552,4 +552,84 @@ class ArrayOfObjects{
 
   ```
   
-## 
+### Static Block
+- We declare the static variable in static block and it is called once irespective of how many objects you make
+- Static block is called first.
+- Class loder in JVM loads a class once.
+- The class dosen't load , if we do not create object.
+- To load a class without creating an object, we can use class named "Class" and which has an object named .forName("Mobile"). 
+- 
+```java
+  class Mobile{
+    String brand;
+    int price;
+    static String name;
+    
+    static{
+        name = "mobile-phone";
+    }
+    
+    public Mobile(){
+        brand = "";
+        price = 200;
+    }
+    public show(){
+        System.out.println(brand +" : "+ price+ " : "+name);
+    }
+}
+
+public class Main(){
+    public static void main(String[] args){
+        
+        Mobile m1 = new Mobile();
+        m1.brand = "Apple";
+        m1.price = 120000;
+        m1.show();
+        
+        
+    }
+}
+```
+
+## Encapsulation in Java
+- Binding the data and methods in class in known as Encapsualtion.
+- Making the instance varibale privte make them only accessable in that respective class.
+  ```java
+  
+  class Human
+  {
+    private String name;
+    private int age;
+    private String gender;
+  
+    public void setName(String n){
+        name = n;
+    } 
+    
+    public void setAge(int a){
+        age = a;
+    }
+    
+    public void setGender(String g){
+        gender = g;
+    }
+  
+    public void getDetails(){
+        System.out.println("Name :- "+name);
+        System.out.println("Age :- "+age);
+        System.out.println("Gender :- ",gender);
+    }
+  }
+  
+  public class Main
+  {
+    public static void main(String [] args){
+        //Creating an object of class Human
+        Human obj = new Human();
+        obj.setAge(22);
+        obj.setName("Sanket");
+        obj.setGender("male");
+        obj.getDetails();
+    } 
+  }
+  ```

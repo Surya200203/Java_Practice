@@ -552,6 +552,7 @@ class ArrayOfObjects{
 
   ```
   
+
 ### Static Block
 - We declare the static variable in static block and it is called once irespective of how many objects you make
 - Static block is called first.
@@ -633,3 +634,5 @@ public class Main(){
     } 
   }
   ```
+
+

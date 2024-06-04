@@ -1,5 +1,6 @@
 # Ignore the .idea folder
 .idea/
+.out/
 
 # Ignore the Java_Practice.iml file
 Java_Practice.iml

@@ -16,33 +16,33 @@ Learning Java using project based learning technique
 ## Data Type
 
 - Types :
- - Primitve 
- - Non Primitive
+  - Primitve 
+  - Non Primitive
 
 - Primitive :
- - Integer --> byte, short, int long
- - Float --> double, float
- - Character 
- - Boolean 
+  - Integer --> byte, short, int long
+  - Float --> double, float
+  - Character 
+  - Boolean 
 
 - Integer
- - int --> 4 bytes
- - long --> 8 bytes
- - short --> 2 bytes
- - byte --> 1 byte  --> -128 to 127
+  - int --> 4 bytes
+  - long --> 8 bytes
+  - short --> 2 bytes
+  - byte --> 1 byte  --> -128 to 127
 
 - Float
- - float --> 4 bytes
- - double --> 8 bytes (default)
+  - float --> 4 bytes
+  - double --> 8 bytes (default)
 
 - Character
- - char --> 2 bytes (It has 2 bytes because it uses UNICODE)
- - Always use single quote
+  - char --> 2 bytes (It has 2 bytes because it uses UNICODE)
+  - Always use single quote
 
 - Boolean 
- - It accepts true or false
+  - It accepts true or false
 
-## Type Converstio and Casting
+## Type Converstion and Casting
 - Casting : Explicit converstion
 - Converstion : Implicit converstion
 ```java
@@ -70,8 +70,8 @@ System.out.println(result);  // 300
 Here the multiplication of a and b gives 300, which is out of range of byte. So, java promote it to int and we can store it in result.
 
 ## Arithmetic  Operator
-- + --> Addition
-- - --> Subtraction
+- " + " --> Addition
+- " - " --> Subtraction
 - / --> Division (gives quotent)
 - % --> Modulo (gives remainder)
 - num++ --> Post Increment (assigns and then increment's the value)
@@ -81,11 +81,11 @@ Here the multiplication of a and b gives 300, which is out of range of byte. So,
 
 ## Relational Operators
 - < --> Less than
-- > --> Greather than
+- " > " --> Greather than
 - = --> Assignment opertor
 - == --> Equals to
 - <= --> Less than  Equal to
-- >= --> Greater tha Equal to
+- " >= " --> Greater tha Equal to
 - != --> Not equal to
 
 ## Logical Operator
@@ -196,18 +196,18 @@ do{
 
 ## OOP (Object Oriented Programming)
 - Object --> Properties and Bheaviours
-```java
+ ```java
 
-class Calculator{
+    class Calculator{
 
-    public int add(num1,num2){
+      public int add(num1,num2){
         return num1 + num2;
+     }
     }
-}
 
-public class Main{
+    public class Main{
 
-    public static void main(String[] args){
+      public static void main(String[] args){
         
         int number1 = 2;
         int number2 = 3;
@@ -215,10 +215,10 @@ public class Main{
         Calculator c = new Calculator();
         int result = c.add(number1.number2);
         System.out.println(result); //5
+     }
     }
-}
 
-```
+ ```
 - Methods in Java
 ```java
 
@@ -826,7 +826,7 @@ public class Main(){
 
     public class Anonymous {
         public static void main(String[] args) {
-            new A().show();   // Anonymous Object
+            new OOP.AccessModifiers.other.A().show();   // Anonymous Object
         }
     }
 
@@ -979,7 +979,7 @@ public class Main(){
       }
     }
 
-    class B extends A{
+    class B extends OOP.AccessModifiers.other.A{
       public B(){
         super(2);
         System.out.println("in B");
@@ -999,7 +999,7 @@ public class Main(){
         System.out.println("Calling Default Constructor of B");
         B obj2 = new B();
         System.out.println("Calling Default Constructor of A");
-        A obj3 = new A();
+        OOP.AccessModifiers.other.A obj3 = new OOP.AccessModifiers.other.A();
 
       }
     }
@@ -1021,7 +1021,7 @@ public class Main(){
       }
     }
 
-    class B extends A {
+    class B extends OOP.AccessModifiers.other.A {
       public B(){
         super();
         System.out.println("in B");
@@ -1050,3 +1050,54 @@ public class Main(){
       }
     }
   ```
+
+## Method Overriding in JAVA
+- In below example the add() method of AdvCalc class overrides add() method of Calc class.
+  ```java
+    class Clac{
+
+        public int add(int n1, int n2){
+            return n1+n2;
+        }
+
+        public int sub(int n1,int n2){
+            return n1-n2;
+        }
+    }
+
+    class AdvCalc extends Clac{
+
+        public int add(int n1, int n2){
+            return n1+n2+1;
+        }
+    }
+
+    public class Demo {
+        public static void main(String[] args) {
+
+            AdvCalc obj = new AdvCalc();
+            int r1 = obj.add(2,3);   
+            int r2 = obj.sub(3,2);   
+            System.out.println(r1 +" : "+r2 );
+
+
+        }   
+    }
+
+  ```
+  
+## Access modifiers
+
+|       | Public | Private | Protected | Default |
+| :---        |:------:|:-------:|:---------:|:-------:|
+| Same Class        |   Y    |    Y    |     Y     |    Y    |
+| Same package subclass    |   Y    |    N    |     Y     |    Y    |
+|Same package non-subclass    |   Y    |    N    |     Y     |    Y    |
+| Different package subclas   |   Y    |    N    |     Y     |    N    |
+| Different packagr non-subclass   |   Y    |    N    |     N     |    N    |
+
+- Note 
+  1. Make your classes public
+  2. Can't have two public classes in same file.
+  3. Try to keep your instance variable private.
+  4. Most of the time methods will pe public.

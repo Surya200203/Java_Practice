@@ -1101,3 +1101,325 @@ public class Main(){
   2. Can't have two public classes in same file.
   3. Try to keep your instance variable private.
   4. Most of the time methods will pe public.
+
+## Polymorphism
+
+- "Poly" means many and "morphism" means behaviour.
+- Types of Polymorphism :
+  1. Complie time polymorphism (Eg. Overloading)
+  2. Run time polymorphism  (Eg. Overridding)
+
+### Dynamic Method Dispatch
+- We are not sure which methos will be called
+
+## Final Keyword
+- It can be used with variable, method and class
+1. Final with variable
+     ```java
+         public class Demo{
+             public static void main(String[] args){
+                 final int num = 9;
+                 System.out.println(num);  // 9
+             }         
+         }
+     ```
+     - final keyword makes variable constant, it cannot be changed .
+2. Final with Class
+   ```java
+       final class Clac{
+           public void show(){
+               System.out.println("in show of Calc");
+           }
+  
+           public void add(int a , int b){
+               System.out.println(a+b);
+           }
+       }
+   ```
+   - Making a class final , means no one can extend it (stopping inheritance).
+3. Final with Method
+   ```java
+        class Clac{
+            public final void show(){
+                System.out.println("By Sanket");
+            }
+   
+            public void add(int a , int b){
+                System.out.println(a+b);
+            }
+        } 
+   ```
+   - By using final with method ,we stop method overriding.
+
+## Upcasting And Downcasting
+
+  ```java
+    class A{
+        public void show1(){
+            System.out.println("in A show");
+        }
+    }
+
+    class B extends A {
+        public void show2(){
+            System.out.println("in B show");
+        }
+    }
+
+
+    public class D {
+        public static void main(String[] args) {
+            A obj = new B();        // Upcasting
+            obj.show1();
+
+            B obj1 = (B) obj;   // Downcasting
+            obj1.show2();
+        }   
+    }
+
+  ```
+## Wrapper Classes
+- converting a primitive data type into a wrapper object is called autoboxing.
+- converting a wrapper object into primitive data type is called auto-unboxing.
+  ```java
+    public class Demo{
+        public static void main(String [] args){
+            int num1 = 9;
+            Integer num = num1;    // autoboxing
+            System.out.println(num);
+  
+            int num2 = num;
+            System.out.println(num2); // auto-unboxing
+        }
+    }
+  ```
+## Abstract Keyword
+1. abstract method should be in abstract class
+2. An abstract class can have abstract and normal methods
+3. We can't create an object of abstract class.
+4. Need concreate class.
+
+```java
+    abstract class Car {
+  public abstract void drive();
+
+  public abstract void fly();
+
+  public void playMusic() {
+    System.out.println("play music");
+  }
+}
+
+class BMW extends Car {
+  public void drive() {
+    System.out.println("driving...");
+  }
+
+  
+  public void fly() {
+    System.out.println("Flying...");
+  }
+}
+
+public class Abs {
+  public static void main(String[] args) {
+    Car obj = new BMW();
+    obj.drive();
+    obj.playMusic();
+    obj.fly();
+  }
+}
+```
+
+## Inner Class
+```java
+    class A{
+        int age;
+
+        public void show(){
+            System.out.println("in show");
+        }
+
+        class B{
+            public void config(){
+                System.out.println("in config");
+            }   
+        }
+    }
+    public class IC {
+        public static void main(String[] args) {
+            A obj = new A();
+            obj.show();
+
+            A.B obj1 = obj.new B();
+            obj1.config();  
+        }
+    }
+```
+
+## Anonymous Inner Class
+  ```java
+        class A{
+            public void show(){
+              System.out.println("in show of A");
+            }
+        }
+        
+        public class Demo{
+          public static void main(String[] args) {
+                A obj = new A()
+                {
+                    public void show(){
+                      System.out.println("in new show");
+                    }
+                };
+                obj.show();
+          }
+        }
+        
+        /*
+                Output
+                
+                in new show
+         */
+  ```
+
+## Abstract and Inner class
+```java
+    abstract class A{
+        public abstract void show();
+        public abstract void config();
+    }   
+    
+    public class Demo{
+      public static void main(String[] args) {
+        A obj = new A()
+        {
+            public void show(){
+              System.out.println("in new show");
+            }
+            
+            public void config(){
+              System.out.println("in new config");
+            }
+        };
+        obj.show();
+        obj.config();
+      }
+    }
+```
+
+## Need of Interface
+```java
+        interface Computer{
+            void code();
+        }   
+        class Laptop implements Computer{
+            public void code(){
+              System.out.println("code, compile, run");
+            }
+        }
+
+        class Desktop implements Computer{
+          public void code(){
+            System.out.println("code, compile, run, faster");
+          }
+        }
+        
+        class Developer{
+            public void devApp(Computer lap){
+                lap.code();
+            }
+        }   
+
+        public class Demo{
+            public static void main(String [] args){
+                
+                Computer lap = new Laptop();
+                Computer desk = new Desktop();
+                
+                Developer Navin = new Developer();
+                navin.devApp(desk);
+            }
+        }
+
+```
+## Interface
+```java
+    interface A{
+
+        // in interface variables are static and final
+        int age = 22;
+        String area = "Pune";
+
+        void show();
+        void config();
+
+    }
+    
+    interface X{
+        void run();
+    }
+    
+    interface Y extends X{
+    
+    }
+
+    class B implements A,X{
+
+        public void config() {
+            System.out.println("in config");
+        }
+
+        public void show(){
+            System.out.println("in show");
+        }
+        public void run(){
+          System.out.println("in run");
+        }
+    }
+
+    public class Demo {
+
+        public static void main(String[] args) {
+            A obj2;
+            obj2 = new B();
+            obj2.show();
+            obj2.config();
+                
+            Y obj = new B();
+            obj.run();
+            
+            System.out.println(A.age);
+            System.out.println(A.area);
+        }
+    }
+
+```
+- Interface does not has memory in heap , it is of object create of class B.
+- Variables in interfaces are always static and final.
+- A same class can implement more than one interface.
+- One interface can inherit another interface
+- NOTE:
+  1. class - class --> extends
+  2. class - interface --> implements
+  3. interface to interface --> extends
+
+## Enum in Java
+```java
+  enum Status{
+    Running, Failed , Pending, Success;
+  }
+  
+  public class Demo
+  {
+      public static void main(String[] args){
+          Status [] ss = Status.values();
+          
+          for(Status s : ss){
+            System.out.println(ss);
+          }
+            
+      }
+  }
+```

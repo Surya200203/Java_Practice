@@ -1,17 +1,28 @@
 package PatternQuestions;
+/*
 
+****
+****
+****
+****
+ */
+
+class Pattern3{
+
+    public void show(int n ){
+        for(int i = 0 ; i < n ; i++){
+            for(int j = 0 ; j < n ; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
 public class Question3 {
 
     public static void main(String[] args) {
 
-        for(int i = 1 ; i <= 9; i=i+2){
-            for(int j = 5-i ; j >=1 ; j--){
-                System.out.print(" ");
-            }
-            for (int k = 1;k <= i ;k++){
-                System.out.print('*');
-            }
-            System.out.println();
-        }
+        Pattern3 pt = new Pattern3();
+        pt.show(4);
     }
 }

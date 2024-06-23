@@ -1423,3 +1423,168 @@ public class Abs {
       }
   }
 ```
+
+## Types of Interfaces
+- Types of Interface
+  1. Normal
+  2. Functional / SAM (Single Abstract Method)
+  3. Marker
+- ***Normal Interface*** :- The inteface with two or more method is called normal interface.
+- ***Functional Interface*** :- Interface with one method is called SAM or functional Interface.
+- ***Marker Interface*** :- Interface with no methods is caled Marker Interface.
+
+## Exception Handling
+- Types of Error : 
+  1. Compile-time Error
+  2. Runtime Error (Exceptions Handling)
+  3. Logical Error
+
+### try-catch
+```java
+    public class Exp {
+        public static void main(String[] args) {
+
+            int i = 12;
+            int j = 0;
+
+            try
+            {
+                j = 99/i;
+            }
+            catch(Exception e){
+                System.out.println("Something went wrong");
+                System.out.println("Bye");
+            }
+
+            System.out.println(i);
+
+        }
+    }
+```
+### try With multiple catch
+```java
+
+public class MultipleExp {
+  public static void main(String[] args) {
+
+    int i = 12 ;
+    int j =0;
+
+    String s = null;
+    int nums[] = new int[5];
+    try
+    {
+      j = 68/i;
+      System.out.println(s.length());
+      System.out.println(nums[2]);
+      System.out.println(nums[4]);
+
+    }
+    catch(ArithmeticException e){
+      System.out.println("Cannot divide by zero");
+    }
+    catch (IndexOutOfBoundsException e){
+      System.out.println("Index is out of bound");
+    }
+    catch(Exception e){
+      System.out.println("Something went wrong ..."+e);
+    }
+  }
+}
+
+
+```
+
+### throw Keyword
+```java
+public class throwKeyword {
+    public static void main(String[] args) {
+        int i = 5 ;
+        int j =0;
+
+
+        try {
+            j = 18/i;
+            if (j == 0)
+                throw new ArithmeticException();
+        }
+        catch(ArithmeticException e) {
+            j = 18/1;
+            System.out.println("That's the default output");
+        }
+        catch(Exception e){
+            System.out.println("Something went wrong : "+e);
+        }
+
+        System.out.println(j);
+        System.out.println("Bye");
+    }
+
+
+
+}
+
+
+```
+
+### Custom Exception
+- We can make custom exception by making class of it and extending it to Exception.
+
+```java
+class MyException extends Exception{
+
+    MyException(String str){
+        super(str);
+    }
+}
+
+public class CustomException {
+    public static void main(String[] args) {
+
+            int i = 100 ;
+            int j =0;
+
+
+            try {
+                j = 18/i;
+                if (j == 0)
+                    throw new MyException("This is my exception..");
+            }
+            catch(MyException e) {
+                j = 18/1;
+                System.out.println("That's the default output" + e);
+            }
+            catch(Exception e){
+                System.out.println("Something went wrong : "+e);
+            }
+
+            System.out.println(j);
+            System.out.println("Bye");
+
+
+    }
+}
+
+```
+
+### Ducking the exception with throws
+```java
+
+class A {
+    public void show() throws ClassNotFoundException{
+        Class.forName("Calc");
+    }
+}
+public class throwsKeyword {
+    public static void main(String[] args)  {
+
+        A obj = new A();
+        try {
+            obj.show();
+        } catch (ClassNotFoundException e) {
+            System.out.println(e);;
+        }
+    }
+}
+
+```

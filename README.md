@@ -1588,3 +1588,160 @@ public class throwsKeyword {
 }
 
 ```
+## Threads
+### Multiple Threads
+- Need to extend class with Thread class.
+- Need to run in main with start.- Need to define run() in class extending Thread.
+```java
+    class A extends Thread{
+
+      public void run(){
+        for(int i = 0; i < 50; i++){
+            System.out.println("Hi");
+        }
+      }
+    }
+
+    class B extends Thread{
+
+        public void run(){
+            for(int j = 0; j < 50 ; j++){
+                System.out.println("Hello");
+            }
+        }
+    }
+
+    public class MulThreads {
+        public static void main(String[] args) {
+            A a = new A();
+            B b = new B();
+            a.start();
+            b.start();
+        }
+
+    }
+    /*
+  
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi  
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi
+    Hi  
+    Hi
+    Hi
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    Hello
+    */
+```
+### Thread Priority and Sleep
+- getPriority() gives the priority of a thread.
+  - Priority ranges from 1 to 10.
+  - 1 is least priority.
+  - 10 is the highest priority.
+  - 5 is the default priority.
+- setPriority() is used to set the priority of the thread.
+  - We can use constant for setting the priority:- 
+    - Thread.MAX_PRIORITY
+    - Thread.MIN_PRIORITY
+    - Thread.NORM_PRIORITY
+- Thread.sleep(i) is used to make thread wait.
+### Thread States
+1. New State :- When we create a thread.
+2. Runnable State :- When we start() a thread it goes into runnable state.
+3. Running State :- thread running with help of run()
+4. Waiting State :-  sleep() will take it to waiting state
+5. Dead State :- When work is over.
+
+## Collection API in JAva
+-

@@ -1743,5 +1743,5 @@ public class throwsKeyword {
 4. Waiting State :-  sleep() will take it to waiting state
 5. Dead State :- When work is over.
 
-## Collection API in JAva
--
+## Collection Frameworks
+<embed src="pdf/OOPS.pdf" width="600" height="500" type="application/pdf">

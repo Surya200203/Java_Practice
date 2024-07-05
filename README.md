@@ -1744,4 +1744,9 @@ public class throwsKeyword {
 5. Dead State :- When work is over.
 
 ## Collection Frameworks
-<embed src="pdf/OOPS.pdf" width="600" height="500" type="application/pdf">
+![](images/cf1.jpg)
+![](images/cf2.jpg)
+![](images/cf3.jpg)
+![](images/cf4.jpg)
+![](images/cf5.jpg)
+![](images/cf6.jpg)
